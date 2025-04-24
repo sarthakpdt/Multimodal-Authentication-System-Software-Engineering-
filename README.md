@@ -1,77 +1,68 @@
-# dlib C++ library  [![GitHub Actions C++ Status](https://github.com/davisking/dlib/actions/workflows/build_cpp.yml/badge.svg)](https://github.com/davisking/dlib/actions/workflows/build_cpp.yml) [![GitHub Actions Python Status](https://github.com/davisking/dlib/actions/workflows/build_python.yml/badge.svg)](https://github.com/davisking/dlib/actions/workflows/build_python.yml)
+# MultiModal Authentication System Software Engneering 
 
-Dlib is a modern C++ toolkit containing machine learning algorithms and tools for creating complex software in C++ to solve real world problems. See [http://dlib.net](http://dlib.net) for the main project documentation and API reference.
+Protect the data of the user by various Multimodal Authentication System such as Fingerprint, Facecam, username and password 
+
+## Features
+1. Three-layer Authentication – Username/Password + Facial Recognition + Voice Matching
+2. Machine Learning Models – Used for both face and voice matching
+3. Modular Architecture – Easy to expand or replace individual modules
+4. Security-first Design – Minimizes spoofing & identity theft risks
+5. System-level & Unit-level Complexity Analysis – Follows Software Engineering practices
+
+## Requirements
+
+Use Python ≥ 3.8. Conda recommended: [Anaconda](https://docs.anaconda.com/anaconda/install/linux/)
+
+Install the following:
+1. pandas
+2. numpy
+3. scikit-learn
+4. imbalanced-learn
+5. seaborn
+6. matplotlib
+7. networkx
+8. opencv-python
+9. speechrecognition
+10. pyaudio
 
 
+## To setup the environment:
+1. Create virtual environment
+   conda create -n multimodal-auth python=3.8
+2. Activate environment
+   conda activate multimodal-auth
+3. Install all required packages
+   pip install -r requirements.txt
 
-## Compiling dlib C++ example programs
-
-Go into the examples folder and type:
-
-```bash
-mkdir build; cd build; cmake .. ; cmake --build .
+## Project Structure 
+```plaintext
+/Multimodal-Auth/
+│
+├── /data/                  # Place user face and voice samples here
+├── /face_module/          # Face recognition scripts (OpenCV + ML model)
+├── /voice_module/         # Voice recognition scripts (SpeechRecognition + classifier)
+├── /text_module/          # Username/password handling
+├── /utils/                # Shared utilities and config
+├── main.py                # Entry point for the system
+├── requirements.txt
+└── README.md
 ```
 
-That will build all the examples.
-If you have a CPU that supports AVX instructions then turn them on like this:
+## Running the code
+python main.py
 
-```bash
-mkdir build; cd build; cmake .. -DUSE_AVX_INSTRUCTIONS=1; cmake --build .
-```
+It will guide the user through:
+1. Text-based login
+2. Real-time face recognition (via webcam)
+3. Voice matching (via microphone input)
 
-Doing so will make some things run faster.
+Only if all 3 match, access is granted.
 
-Finally, Visual Studio users should usually do everything in 64bit mode.  By default Visual Studio is 32bit, both in its outputs and its own execution, so you have to explicitly tell it to use 64bits.  Since it's not the 1990s anymore you probably want to use 64bits.  Do that with a cmake invocation like this:
-```bash
-cmake .. -G "Visual Studio 14 2015 Win64" -T host=x64 
-```
-
-## Compiling your own C++ programs that use dlib
-
-The examples folder has a [CMake tutorial](https://github.com/davisking/dlib/blob/master/examples/CMakeLists.txt) that tells you what to do.  There are also additional instructions on the [dlib web site](http://dlib.net/compile.html).
-
-Alternatively, if you are using the [vcpkg](https://github.com/Microsoft/vcpkg/) dependency manager you can download and install dlib with CMake integration in a single command:
-```bash
-vcpkg install dlib
-```
-
-## Compiling dlib Python API
-
-Before you can run the Python example programs you must install the build requirement.
-```bash
-python -m venv venv
-pip install build
-```
-
-Then you must compile dlib and install it in your environment. Type:
-```bash
-python -m build --wheel
-pip install dist/dlib-<version>.whl
-```
-
-Or download dlib using PyPi:
-```bash
-pip install dlib
-```
-
-## Running the unit test suite
-
-Type the following to compile and run the dlib unit test suite:
-
-```bash
-cd dlib/test
-mkdir build
-cd build
-cmake ..
-cmake --build . --config Release
-./dtest --runall
-```
-
-Note that on windows your compiler might put the test executable in a subfolder called `Release`. If that's the case then you have to go to that folder before running the test.
-
-This library is licensed under the Boost Software License, which can be found in [dlib/LICENSE.txt](https://github.com/davisking/dlib/blob/master/dlib/LICENSE.txt).  The long and short of the license is that you can use dlib however you like, even in closed source commercial software.
-
-## dlib sponsors
-
-This research is based in part upon work supported by the Office of the Director of National Intelligence (ODNI), Intelligence Advanced Research Projects Activity (IARPA) under contract number 2014-14071600010. The views and conclusions contained herein are those of the authors and should not be interpreted as necessarily representing the official policies or endorsements, either expressed or implied, of ODNI, IARPA, or the U.S. Government.
+## Software Engineering Analysis (included in project)
+1. SRS Document 
+2. UML DIagram
+3. Verisioning
+4. Comparision with existing Tech
+5. Essence Cards
+   
 
