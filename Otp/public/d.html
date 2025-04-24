@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <title>Login & Signup</title>
+
+    <!-- External Styles -->
+    <link rel="stylesheet" href="d.css">
+
+    <!-- Font Awesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" 
+          integrity="sha512-SnH5WK+bZgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A==" 
+          crossorigin="anonymous" referrerpolicy="no-referrer">
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+
+    <div class="container" id="container">
+        
+        <!-- Sign Up Form -->
+        <div class="sign-up">
+            <form id="signup-form">
+                <h1>Create Account</h1>
+                <input type="text" id="username" placeholder="Username" required>
+                <input type="email" id="email" placeholder="Email" required>
+                <input type="password" id="password" placeholder="Password" required>
+
+                <!-- Face Registration -->
+                <div class="face-recognition">
+                    <a href="#"><i class="fa-solid fa-face-smile"></i> Register your Face</a>
+                </div>
+
+                <button type="submit">Sign Up</button>
+            </form>
+        </div>
+
+        <!-- Sign In Form -->
+        <div class="sign-in">
+            <form id="login-form">
+                <h1>Sign In</h1>
+                <input type="email" id="login-email" placeholder="Email" required>
+                <input type="password" id="login-password" placeholder="Password" required>
+
+                <!-- OTP Section -->
+                <button type="button" id="sendOtpBtn">Send OTP</button>
+
+                <!-- OTP Input (Initially Hidden) -->
+                <input type="text" id="otp" placeholder="Enter OTP" class="hidden">
+                <p id="otp-display" style="font-weight: bold; color: green;"></p>
+
+                <!-- Face Recognition Login -->
+                <div class="face-recognition">
+                    <a href="#"><i class="fa-solid fa-face-smile"></i> Sign in with Face</a>
+                </div>
+
+                <a href="#">Forgot password?</a>
+                <button type="submit">Sign In</button>
+            </form>
+        </div>
+
+        <!-- Toggle Panels -->
+        <div class="toggle-container">
+            <div class="toggle">
+                <div class="toggle-panel toggle-left">
+                    <h1>Welcome Back!</h1>
+                    <p>If you already have an account, sign in.</p>
+                    <button id="login">Sign In</button>
+                </div>
+                <div class="toggle-panel toggle-right">
+                    <h1>Hello, Friend!</h1>
+                    <p>If you don't have an account, sign up.</p>
+                    <button id="register">Sign Up</button>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+    <!-- External JavaScript -->
+    <script src="scr.js"></script>
+
+</body>
+</html>

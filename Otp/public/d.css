@@ -1,0 +1,105 @@
+/* General Reset */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-family: "Poppins", sans-serif;
+}
+
+/* Centering the container */
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  background: #f4f4f4;
+}
+
+/* Container Styles */
+.container {
+  width: 800px;
+  display: flex;
+  flex-direction: row;
+  background: #fff;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  border-radius: 10px;
+  overflow: hidden;
+}
+
+/* Forms */
+form {
+  padding: 30px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+/* Input Fields */
+input {
+  width: 80%;
+  padding: 10px;
+  margin: 10px 0;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+
+/* Buttons */
+button {
+  padding: 10px 20px;
+  margin-top: 10px;
+  background: #007bff;
+  color: white;
+  border: none;
+  cursor: pointer;
+  border-radius: 5px;
+}
+
+button:hover {
+  background: #0056b3;
+}
+
+/* OTP Field Hidden (Default) */
+.hidden {
+  display: none;
+}
+
+/* Face Recognition */
+.face-recognition a {
+  text-decoration: none;
+  color: #007bff;
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  margin-top: 10px;
+}
+
+.face-recognition a i {
+  font-size: 20px;
+}
+
+/* Toggle Section */
+.toggle-container {
+  width: 50%;
+  background: #007bff;
+  color: white;
+  text-align: center;
+  padding: 50px;
+}
+
+.toggle-container button {
+  background: white;
+  color: #007bff;
+}
+
+/* ✅ Ensure OTP Button Appears Only in Sign In */
+.create-account #sendOTP {
+  display: none !important; /* Hide OTP button in Create Account */
+}
+
+.sign-in #sendOTP {
+  display: block; /* Show OTP button in Sign In */
+}
+
+
+
+

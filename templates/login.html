@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Face Login</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            min-height: 100vh;
+            background-color: #f2f2f2;
+            margin: 0;
+            text-align: center;
+        }
+    
+        /* Main heading ABOVE everything */
+        h3 {
+            margin: 0 0 0px 0; /* Space below heading */
+            font-size: 28px;
+            color: #2c3e50;
+            font-weight: bold;
+            text-align: center;
+            width: 100%;
+        }
+    
+        /* Container for webcam and controls */
+        .webcam-container {
+            background: white;
+            padding: 25px;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+            width: fit-content;
+            margin: 0 auto;
+        }
+    
+        video, canvas {
+            width: 480px;
+            height: 360px;
+            border: 2px solid #ccc;
+            border-radius: 8px;
+            margin-bottom: 15px;
+        }
+    
+        button {
+            background-color: #4CAF50;
+            color: white;
+            padding: 12px 24px;
+            margin: 3px 3px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 16px;
+            transition: background-color 0.3s;
+        }
+    
+        button:hover {
+            background-color: #45a049;
+        }
+    
+        label {
+            font-size: 16px;
+            color: #333;
+            display: block;
+            margin-top: 15px;
+        }
+    
+        input[type="text"] {
+            padding: 10px 15px;
+            margin-top: 8px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            font-size: 16px;
+            width: 200px;
+        }
+    
+        input[type="text"]:focus {
+            border-color: #4CAF50;
+            outline: none;
+            box-shadow: 0 0 0 2px rgba(76,175,80,0.2);
+        }
+    
+        @media (max-width: 480px) {
+            h3 {
+                font-size: 24px;
+                margin-bottom: 20px;
+            }
+            
+            .webcam-container {
+                padding: 10px;
+                width: 95%;
+            }
+            
+            video, canvas {
+                width: 100%;
+                height: auto;
+                max-height: 300px;
+            }
+            
+            input[type="text"] {
+                width: 90%;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Back button to navigate to the previous page or homepage -->
+    <a href="design_1.html">
+        <button style="background-color: #f44336; margin-bottom: 20px;">Back</button>
+    </a>
+
+    <!-- Move h3 to the top above everything else -->
+    <h3>Login With Your Face</h3>
+
+    <div class="webcam-container">
+        <video id="video" width="440" height="280" autoplay></video>
+        <br>
+
+        <button onclick="capture()">Capture Your Face</button>
+        <br>
+
+        <canvas id="canvas" width="400" height="280" style="display: none;"></canvas>
+        <br>
+
+        <label for="name">User ID: </label>
+        <input type="text" id="name" required name=""/>
+        <br>
+
+        <button onclick="login()">LOGIN</button>
+    </div>
+
+    <script src="{{url_for('static',filename='js/script.js')}}"></script>
+</body>
+</html>
