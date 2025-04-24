@@ -64,5 +64,9 @@ Only if all 3 match, access is granted.
 3. Verisioning
 4. Comparision with existing Tech
 5. Essence Cards
+6. Brief Meettings
+7. Risk Analysis
+8. Trello Cards
+9. Visualization
    
 
